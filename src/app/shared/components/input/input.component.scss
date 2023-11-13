@@ -1,0 +1,65 @@
+@import "../../../theme//theme-variable.scss";
+
+.custom-input-container {
+    position: relative;
+    .text-input {
+        width: 100%;
+        height: 50px;
+        background-color: $input-background;
+        border-style: none;
+        border-radius: 30px;
+        padding: 0 2rem;
+        color: $auth-text-color;
+        @media (max-width: $big-medium-width) {
+            height: 40px;
+            padding: 0 1.5rem;
+            font-size: 13px
+        } 
+        @media (max-width: $small-width) {
+            font-size: 11px;
+            padding: 0 1.2rem;
+        } 
+    }
+    .label-container {
+        position: absolute;
+        align-self: center;
+        top: 15px;
+        left: 20px;
+        transition: 0.3s;
+        pointer-events: none;
+        @media (max-width: $big-medium-width) {
+            top: 9px;
+            left: 18px;
+            font-size: 14px;
+        } 
+        @media (max-width: $small-width) {
+            font-size: 11px;
+        } 
+        .label-input {
+            margin-left: 5px;
+            color: $label-color;
+        }
+    }
+    .text-input:focus {
+        outline-width: 0;
+        
+    }
+    .text-input:focus + .label-container {
+        top: 0px;
+        left: 20px;
+        background-color: $input-background;
+        padding: 0 5px;
+        font-size: 12px;
+        @media (max-width: $big-medium-width) {
+            left: 15px;
+            font-size: 10px;
+        } 
+        @media (max-width: $small-width) {
+            font-size: 8px;
+            left: 10px;
+        } 
+        .icon {
+            display: none;
+        }
+    }
+}

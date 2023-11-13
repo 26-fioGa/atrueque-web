@@ -1,0 +1,158 @@
+@import "../../theme//theme-variable.scss";
+
+.register-container {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    .register-access-ctr, .register-banner-ctr {
+        display: flex;
+        flex-direction: column;
+    }
+    .register-banner-ctr {
+        background-color: $light;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 0;
+        .register-image {
+            width: 32rem;
+            margin-bottom: 3.5rem;
+            align-self: center;
+            @media (max-width: $big-medium-width) {
+                width: 25rem;
+                margin-bottom: 1.8rem;
+            } 
+            @media (max-width: $small-width) {
+                width: 18rem;
+                margin-bottom: 1.4rem;
+            } 
+        }
+        .text-container {
+            padding: 3rem 4rem;
+            background-color: $primary;
+            border-top-right-radius: 80px;
+            border-bottom-right-radius: 80px;
+            border: 2px solid $white;
+            border-left: none;
+            filter: $gray-shadow;
+            @media (max-width: $big-medium-width) {
+                padding: 2.5rem 3rem;
+
+            } 
+            @media (max-width: $medium-width) {
+                border-bottom: 2px solid $white;
+                margin: 2rem 0;
+            }
+            @media (max-width: $small-width) {
+                padding: 1rem 3.5rem;
+            } 
+            .register-text-info {
+                color: $white;
+                font-size: 22px;
+                line-height: 35px;
+                font-weight: 500;
+                @media (max-width: $big-medium-width) {
+                    font-size: 16px;
+                    line-height: 28px;
+                } 
+                @media (max-width: $small-width) {
+                    font-size: 13px;
+                    line-height: 20px;
+                } 
+            }
+        }
+    }
+    .register-access-ctr {
+        justify-content: center;
+        padding-right: 8rem;
+        padding-left: 8rem;
+        color: $auth-text-color;
+        @media (max-width: $big-medium-width) {
+            padding: 0 6rem 0 6rem;
+        }
+        @media (max-width: $medium-width) {
+            background-color: $light;
+            padding: 0 10rem 2rem 10rem;
+        } 
+        @media (max-width: $small-width) {
+            padding: 1.2rem 2.5rem 1.2rem 2.5rem;
+        } 
+        .logo {
+            width: 8rem;
+            margin-bottom: 2rem;
+            @media (max-width: $big-medium-width) {
+                width: 6rem;
+                margin-bottom: 1.8rem;
+            }
+            @media (max-width: $small-width) {
+                width: 4rem;
+                margin-bottom: 1.4rem;
+            } 
+        }
+        .register-title {
+            font-weight: 600;
+            font-size: 25px;
+            margin-bottom: 1.8rem;
+            @media (max-width: $big-medium-width) {
+                font-size: 20px;
+                margin-bottom: 1.6rem;
+            }
+            @media (max-width: $small-width) {
+                font-size: 16px;
+                margin-bottom: 1.4rem;
+            }
+        }
+        .register-info {
+            @media (max-width: $big-medium-width) {
+                font-size: 14px;
+            } 
+            @media (max-width: $small-width) {
+                font-size: 13px
+            }
+        }
+        .register-form {
+            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            @media (max-width: $big-medium-width) {
+                margin: 1.8rem 0;
+                gap: 1.6rem;
+            } 
+            @media (max-width: $small-width) {
+                margin: 1.4rem 0;
+                gap: 1.1rem;
+            } 
+        }
+        .btn-register {
+            width: 22rem;
+            align-self: center;
+            margin-bottom: 2rem;
+            @media (max-width: $big-medium-width) {
+                width: 16rem;
+                margin-bottom: 1.8rem;
+            } 
+            @media (max-width: $small-width) {
+                width: 12rem;
+                margin-bottom: 1.4rem;
+            } 
+        }
+        .login-link-ctr {
+            align-self: center;
+            @media (max-width: $big-medium-width) {
+                font-size: 14px;
+            }
+            @media (max-width: $small-width) {
+                font-size: 12px;
+            } 
+            .login-link {
+                color: $secondary;
+                font-weight: 500;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
+}

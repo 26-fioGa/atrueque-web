@@ -1,0 +1,7 @@
+<div class="custom-input-container">
+  <input class="text-input" type="{{ isPassword ? 'password' : 'text' }}" id="customInput"/>
+  <div class="label-container">
+    <img *ngIf="icon" class="icon" [src]="icon" alt="Icono" />
+    <label class="label-input" for="customInput">{{ label }}</label>
+  </div>
+</div>

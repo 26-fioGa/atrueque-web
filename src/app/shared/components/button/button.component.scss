@@ -1,0 +1,38 @@
+@import "../../../theme//theme-variable.scss";
+
+.button {
+    padding: 0.8rem 0;
+    font-size: 18px;
+    border-color: transparent;
+    border-radius: 20px;
+    color: $white;
+    font-weight: 500;
+    width: 100%;
+    transition: background-color 0.3s ease; 
+    @media (max-width: $big-medium-width) {
+        padding: 0.6rem 0;
+        font-size: 16px;
+    } 
+    @media (max-width: $small-width) {
+        padding: 0.4rem 0;
+        font-size: 13px;
+    } 
+    &.primary {
+        background-color: $primary;
+        &.disabled {
+            background-color: #8EB2FF;
+        }
+        &:hover {
+            background-color: #336de8;
+        }
+    }
+    &.secondary {
+        background-color: $secondary;
+        &.disabled {
+            background-color: #82C9CA;
+        }
+        &:hover {
+            background-color: #249e9e;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+<div class="register-container row">
+    <div class="register-banner-ctr col-lg-6 col-md-12 col-sm-5">
+        <img class="register-image" src="../../../assets/auth/register.png" alt="register-image" />
+        <div class="text-container">
+            <span class="register-text-info">Únete a ATRUEQUE y  empieza a sacar el <br> provecho de tus cosas usadas</span>
+        </div>
+    </div>
+    <div class="register-access-ctr col-lg-6 col-md-12 col-sm-5">
+        <img class="logo" src="../../../assets/atruequeLogo.svg" alt="logo" />
+        <h3 class="register-title">CREA UNA CUENTA</h3>
+        <p class="register-info">
+            Debes registrarte para empezar a realizar trueques, es muy sencillo hacerlo, rellena los siguientes campos
+        </p>
+        <div class="register-form">
+            <app-input class="login-input" [label]="'Nombre de usuario'"
+                [icon]="'../../../assets/icons/user-icon.svg'"></app-input>
+            <app-input class="login-input" [label]="'Correo Electrónico'"
+                [icon]="'../../../assets/icons/email.svg'"></app-input>
+            <app-input class="login-input" [label]="'Contraseña'" [icon]="'../../../assets/icons/lock.svg'"
+                [isPassword]="true"></app-input>
+            <app-input class="login-input" [label]="'Confirmar Contraseña'" [icon]="'../../../assets/icons/lock.svg'"
+                [isPassword]="true"></app-input>
+        </div>
+        <app-button class="btn-register" [label]="'REGISTRARSE'" [color]="'primary'"></app-button>
+        <p class="login-link-ctr">¿Ya tienes una cuenta? <span class="login-link" (click)="goLogin()">Ingresa desde aquí.</span></p>
+    </div>
+</div>

@@ -1,7 +1,18 @@
 <div class="custom-input-container">
-  <input class="text-input" type="{{ isPassword ? 'password' : 'text' }}" id="customInput"/>
+  <input
+    class="{{formControlData.value ? 'text-input-hasValue' : 'text-input'}}"
+    [type]="type"
+    [readonly]="disabled"
+    [formControl]="formControlData"
+    id="customInput"
+  />
   <div class="label-container">
     <img *ngIf="icon" class="icon" [src]="icon" alt="Icono" />
     <label class="label-input" for="customInput">{{ label }}</label>
   </div>
+  <small [hidden]="formControlData.valid || formControlData.untouched" class="error-text">
+    <ng-container *ngIf="formControlData.errors">
+      {{ this.getFirstError() | translate }}
+    </ng-container>
+  </small>
 </div>

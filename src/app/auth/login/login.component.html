@@ -1,25 +1,48 @@
 <div class="login-container row">
-    <div class="login-access-ctr col-lg-6 col-md-12 col-sm-5">
-        <img class="logo" src="../../../assets/atruequeLogo.svg" alt="logo" />
-        <h3 class="login-title">INICIA SESIÓN</h3>
-        <p class="login-info">
-            Usa tus credenciales para hacer seguimiento a tus trueques,
-            conocer novedades y más.
-        </p>
-        <div class="login-form">
-            <app-input class="login-input" [label]="'Usuario o Correo Electrónico'"
-                [icon]="'../../../assets/icons/user-icon.svg'"></app-input>
-            <app-input class="login-input" [label]="'Contraseña'" [icon]="'../../../assets/icons/lock.svg'"
-                [isPassword]="true"></app-input>
-        </div>
-        <app-button class="btn-login" [label]="'INGRESAR'" [color]="'secondary'"></app-button>
-        <p class="register-link-ctr">¿Aún no tienes una cuenta? <span class="register-link" (click)="goRegister()">Crea una aquí.</span></p>
+  <div class="login-access-ctr col-lg-6 col-md-12 col-sm-5">
+    <img class="logo" src="../../../assets/atruequeLogo.svg" alt="logo" />
+    <h3 class="login-title">INICIA SESIÓN</h3>
+    <p class="login-info">
+      Usa tus credenciales para hacer seguimiento a tus trueques, conocer
+      novedades y más.
+    </p>
+    <div class="login-form">
+      <app-input
+        class="login-input"
+        [label]="'Usuario o Correo Electrónico'"
+        [icon]="'../../../assets/icons/user-icon.svg'"
+        [formControlData]="form.controls['user']"
+      ></app-input>
+      <app-input
+        class="login-input"
+        [label]="'Contraseña'"
+        [icon]="'../../../assets/icons/lock.svg'"
+        [type]="'password'"
+        [formControlData]="form.controls['password']"
+      ></app-input>
     </div>
-    <div class="login-banner-ctr col-lg-6 col-md-12 col-sm-5">
-        <img class="login-image" src="../../../assets/auth/login.png" alt="login-image" />
-        <div class="text-container text-center">
-            <span class="login-text-info">No olvides descargar la <br />app para hacer trueques<br />
-                desde donde quieras</span>
-        </div>
+    <app-button
+      class="btn-login"
+      [label]="'INGRESAR'"
+      [color]="'secondary'"
+      [disabled]="!form.valid"
+    ></app-button>
+    <p class="register-link-ctr">
+      ¿Aún no tienes una cuenta?
+      <span class="register-link" (click)="goRegister()">Crea una aquí.</span>
+    </p>
+  </div>
+  <div class="login-banner-ctr col-lg-6 col-md-12 col-sm-5">
+    <img
+      class="login-image"
+      src="../../../assets/auth/login.png"
+      alt="login-image"
+    />
+    <div class="text-container text-center">
+      <span class="login-text-info"
+        >No olvides descargar la <br />app para hacer trueques<br />
+        desde donde quieras</span
+      >
     </div>
+  </div>
 </div>

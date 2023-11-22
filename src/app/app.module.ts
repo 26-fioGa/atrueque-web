@@ -5,27 +5,29 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './auth/register/register.component';
-import { LoginComponent } from './auth/login/login.component';
-import { InputComponent } from './shared/components/input/input.component';
-import { ButtonComponent } from './shared/components/button/button.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthService } from './auth/auth.service';
+import { HttpService } from './core/http.service';
+import { HttpInterceptorService } from './core/http-interceptor.service';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
-    LoginComponent,
-    // SHARED COMPONENTS
-    InputComponent,
-    ButtonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     TranslateModule.forRoot(),
+    HttpClientModule,
+    SharedModule
   ],
-  providers: [],
+  providers: [HttpService, {
+    provide: HTTP_INTERCEPTORS, 
+    useClass: HttpInterceptorService,
+    multi: true,
+  },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,40 @@
+@import "../../../theme/theme-variable.scss";
+
+.loader-overlay{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $background-loader;
+  backdrop-filter: blur(5px);
+  z-index: 1000; 
+}
+
+.loader-image-container {
+  animation: moveLeftRight 1.5s infinite linear;
+  .logo-loader {
+    width: 18rem;
+    @media (max-width: $medium-width) {
+        width: 14rem;
+    }
+    @media (max-width: $small-width) {
+        width: 10rem;
+    }
+  }
+}
+
+@keyframes moveLeftRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

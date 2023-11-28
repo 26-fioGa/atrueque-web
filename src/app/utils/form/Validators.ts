@@ -1,5 +1,5 @@
 import { AbstractControl, ValidationErrors } from "@angular/forms";
-import { hasMaxLength, isEmail, isInteger, isLength, isRequired } from "../validations/validations";
+import { hasMaxLength, hasMinLength, isEmail, isInteger, isLength, isRequired, isValidPassword } from "../validations/validations";
 
 class Validators {
     static required(fieldName: string, message?: string): (control: AbstractControl) => ValidationErrors | null {
@@ -28,6 +28,15 @@ class Validators {
         };
     }
 
+    static minLength(minLength: number): (control: AbstractControl) => ValidationErrors | null {
+        return (control: AbstractControl) => {
+            if (!hasMinLength(control.value, minLength)) {
+                return { maxLength: `El mínimo permitido es de ${minLength} caracteres` };
+            }
+            return null;
+        };
+    }
+
     static integer(control: AbstractControl): ValidationErrors | null {
         if (!isInteger(control.value)) {
             return { integer: 'Ingrese números enteros' };
@@ -42,6 +51,13 @@ class Validators {
             }
             return null;
         };
+    }
+
+    static isValidPassword(control: AbstractControl): ValidationErrors | null {
+        if (!isValidPassword(control.value)) {
+            return { password: 'La contraseña debe contener como mínimo una mayúscula, un dígito y un caracter especial' };
+        }
+        return null;
     }
 }
 

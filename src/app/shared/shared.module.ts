@@ -5,6 +5,7 @@ import { InputComponent } from './components/input/input.component';
 import { ButtonComponent } from './components/button/button.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { CommonModule } from '@angular/common';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
 
 
 @NgModule({
@@ -17,12 +18,14 @@ import { CommonModule } from '@angular/common';
         // SHARED COMPONENTS
         InputComponent,
         ButtonComponent,
-        LoaderComponent
+        LoaderComponent,
+        SnackbarComponent
     ],
     exports: [
         InputComponent,
         ButtonComponent,
-        LoaderComponent
+        LoaderComponent,
+        SnackbarComponent
     ],
     providers: [],
 })

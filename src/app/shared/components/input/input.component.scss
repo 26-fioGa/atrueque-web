@@ -97,6 +97,7 @@
         color: $danger-text;
         font-size: 14px;
         margin-left: 20px;
+        display: block;
         @media (max-width: $big-medium-width) {
             font-size: 12px;
         }

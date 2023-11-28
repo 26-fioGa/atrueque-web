@@ -1,0 +1,10 @@
+<div
+  class="snackbar-container"
+  [ngClass]="{
+    success: snackbarService.stateMessage == 'success',
+    error: snackbarService.stateMessage == 'error'
+  }"
+  *ngIf="isShowing"
+>
+  {{ snackbarService.message }}
+</div>

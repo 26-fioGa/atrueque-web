@@ -19,19 +19,17 @@ export class RegisterComponent implements OnInit {
   }
 
   goLogin() {
-    this.router.navigate(['/auth/login'], {
-      skipLocationChange: true,
-      replaceUrl: true,
-    });
+    this.router.navigate(['/auth/login']);
   }
 
   createFormGroup(): FormGroup {
-    return new FormGroup({
+    const form =  new FormGroup({
       username: new FormControl('',  [Validators.required('nombre de usuario')]),
       email: new FormControl('', [Validators.required('correo electrónico'), Validators.email]),
-      psw: new FormControl('', [Validators.required('contraseña')]),
+      psw: new FormControl('', [Validators.required('contraseña'), Validators.minLength(8), Validators.isValidPassword]),
       confirmPsw: new FormControl('', [Validators.required('contraseña')]),
     });
+    return form;
   }
 
   register() {

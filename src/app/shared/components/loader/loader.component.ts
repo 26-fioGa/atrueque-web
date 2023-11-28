@@ -13,8 +13,6 @@ export class LoaderComponent implements OnInit {
 
   ngOnInit() {
     this.loaderService.loaderState.subscribe((state) => {
-      console.log('Estad inicial ', state);
-      
       this.isLoading = state;
     });
   }

@@ -25,6 +25,14 @@ export const hasMaxLength = (value: any, length: number): boolean => {
   return !req(value) || len(value) <= length;
 };
 
+export const hasMinLength = (value: any, length: number): boolean => {
+  return !req(value) || len(value) >= length;
+};
+
 export const isInteger = (value: any): boolean => {
   return regex(value, /(^[0-9]*$)|(^-[0-9]+$)/);
+};
+
+export const isValidPassword = (value: any): boolean => {
+  return regex(value, /^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).+$/);
 };

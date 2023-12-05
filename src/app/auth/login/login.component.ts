@@ -3,11 +3,13 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import Validators from 'src/app/utils/form/Validators';
 import { AuthService } from '../auth.service';
+import { fadeToLeftAnimation } from 'src/app/utils/animation/route-animation';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  animations: [fadeToLeftAnimation]
 })
 export class LoginComponent implements OnInit {
   constructor(private router: Router, private authService: AuthService) {}

@@ -6,7 +6,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { CommonModule } from '@angular/common';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
-
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
     imports: [
@@ -19,13 +19,15 @@ import { SnackbarComponent } from './components/snackbar/snackbar.component';
         InputComponent,
         ButtonComponent,
         LoaderComponent,
-        SnackbarComponent
+        SnackbarComponent,
+        NavbarComponent
     ],
     exports: [
         InputComponent,
         ButtonComponent,
         LoaderComponent,
-        SnackbarComponent
+        SnackbarComponent,
+        NavbarComponent
     ],
     providers: [],
 })

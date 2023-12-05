@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-type colorButton = 'primary' | 'secondary';
+type colorButton = 'primary' | 'secondary' | 'cream';
 
 @Component({
     selector: 'app-button',
@@ -11,4 +11,5 @@ export class ButtonComponent {
     @Input() label: string = '';
     @Input() color: colorButton = 'primary';
     @Input() disabled: boolean = false;
+    @Input() isSmall: boolean = false;
 }

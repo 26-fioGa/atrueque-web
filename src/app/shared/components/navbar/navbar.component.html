@@ -1,0 +1,17 @@
+<div class="navbar-container">
+  <img class="logo" src="../../../../assets/logoBlanco.svg" alt="logo" />
+  <div class="link-container">
+    <span class="link-item">EXPLORAR</span>
+    <span class="link-item">CHATS</span>
+    <span class="link-item">MIS TRUEQUES</span>
+  </div>
+  <div class="user-options-container">
+    <app-button
+      (click)="goAuth()"
+      class="btn-login"
+      [label]="'Iniciar Sesión'"
+      [color]="'cream'"
+      [isSmall]="true"
+    ></app-button>
+  </div>
+</div>

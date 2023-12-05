@@ -1,0 +1,71 @@
+@import "../../../theme/theme-variable.scss";
+
+.navbar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    padding: 0 1.5rem;
+    background-color: $primary;
+    color: $white;
+    font-size: 1rem;
+    box-shadow: $navbar-shadow;
+    font-weight: 500;
+    @media (max-width: $big-medium-width) {
+        height: 3.8rem;
+        font-size: 0.8rem;
+        padding: 0 1.3rem;
+    }
+
+    .logo {
+        width: 7rem;
+        @media (max-width: $big-medium-width) {
+            width: 5rem;
+        }
+    }
+
+    .link-container {
+        display: flex;
+        gap: 8rem;
+        @media (max-width: $big-medium-width) {
+            gap: 6rem;
+        }
+
+        .link-item {
+            cursor: pointer;
+            position: relative;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .link-item::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $white;
+            /* Color de la línea */
+            transform-origin: bottom;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .link-item:hover {
+            color: $white;
+            /* Cambia el color del texto en hover */
+        }
+
+        .link-item:hover::after {
+            transform: scaleX(1);
+        }
+    }
+    .user-options-container {
+        .btn-login {
+            display: block;
+            width: 10rem;
+        }
+    }
+}

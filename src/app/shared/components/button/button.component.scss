@@ -17,6 +17,18 @@
         padding: 0.4rem 0;
         font-size: 13px;
     } 
+    &.small {
+        font-size: 1rem;
+        padding: 0.5rem 0;
+        @media (max-width: $big-medium-width) {
+            padding: 0.4rem 0;
+            font-size: 14px;
+        } 
+        @media (max-width: $small-width) {
+            padding: 0.3rem 0;
+            font-size: 11px;
+        } 
+    }
     &.primary {
         background-color: $primary;
         &.disabled {
@@ -36,6 +48,18 @@
         &:not(.disabled) {
             &:hover {
                 background-color: #249e9e;
+            }
+        }
+    }
+    &.cream {
+        color: $dark;
+        background-color: $light;
+        &.disabled {
+            background-color: #eaeaea;
+        }
+        &:not(.disabled) {
+            &:hover {
+                background-color: #efe8ca;
             }
         }
     }

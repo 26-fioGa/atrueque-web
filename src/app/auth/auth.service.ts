@@ -18,7 +18,7 @@ export class AuthService {
         //Se guardan los token en localStorage
         localStorage.setItem('access_token', response.tokens.access);
         localStorage.setItem('refresh_token', response.tokens.refresh);
-        this.snackbarService.showMessage('Bienvenido!', 'success');
+        this.router.navigate(['/home']);
       }
     );
   }
